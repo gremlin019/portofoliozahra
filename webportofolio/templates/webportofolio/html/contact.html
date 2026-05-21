@@ -1,0 +1,70 @@
+{% extends "webportofolio/html/base.html" %}
+
+{% block title %}Contact · {{ profile.nama_lengkap|default:"Portofolio" }}{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width:700px;">
+
+  <div class="text-center mb-5">
+    <h1 class="fw-700 mb-1" style="color:var(--navy);font-size:2.2rem;">Contact</h1>
+    <p class="text-muted">Hubungi saya lewat form atau sosial media</p>
+  </div>
+
+  <!-- Sosial Media -->
+  <div class="d-flex justify-content-center gap-3 mb-5">
+    {% for sm in sosmed %}
+      {% if sm.platform == 'instagram' %}
+        <a href="{{ sm.url }}" target="_blank" class="sosmed-btn" title="Instagram" style="width:48px;height:48px;font-size:1.3rem;">
+          <i class="bi bi-instagram"></i>
+        </a>
+      {% elif sm.platform == 'linkedin' %}
+        <a href="{{ sm.url }}" target="_blank" class="sosmed-btn" title="LinkedIn" style="width:48px;height:48px;font-size:1.3rem;">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      {% elif sm.platform == 'email' %}
+        <a href="mailto:{{ sm.url }}" class="sosmed-btn" title="Email" style="width:48px;height:48px;font-size:1.3rem;">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Form -->
+  <div class="card border-0 shadow-sm rounded-4 p-4">
+    <div class="d-flex align-items-center gap-2 mb-4 pb-3 border-bottom">
+      <i class="bi bi-chat-dots-fill" style="color:var(--blue-600);font-size:1.3rem;"></i>
+      <h3 class="fw-600 mb-0" style="color:var(--navy);">Kirim Pesan</h3>
+    </div>
+
+    {% if messages %}
+      {% for msg in messages %}
+        <div class="alert alert-{{ msg.tags }} rounded-3 mb-4">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label fw-500" style="color:var(--gray-700);">Nama <span class="text-danger">*</span></label>
+        <input type="text" name="nama" class="form-control rounded-3" placeholder="Nama kamu" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-500" style="color:var(--gray-700);">Email <span class="text-danger">*</span></label>
+        <input type="email" name="email" class="form-control rounded-3" placeholder="email@kamu.com" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-500" style="color:var(--gray-700);">Subjek</label>
+        <input type="text" name="subjek" class="form-control rounded-3" placeholder="Subjek pesan (opsional)">
+      </div>
+      <div class="mb-4">
+        <label class="form-label fw-500" style="color:var(--gray-700);">Pesan <span class="text-danger">*</span></label>
+        <textarea name="pesan" class="form-control rounded-3" rows="5" placeholder="Tulis pesanmu di sini..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary-zahra w-100 text-center" style="border:none;cursor:pointer;padding:.75rem;">
+        <i class="bi bi-send-fill me-2"></i>Kirim Pesan
+      </button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}
