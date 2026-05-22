@@ -162,7 +162,7 @@
       <div class="col-lg-4 text-center anim-1">
         <div class="profile-photo-wrap d-inline-block">
           {% if profile.foto %}
-            <img src="{{ profile.foto.url }}" alt="{{ profile.nama_lengkap }}" class="profile-photo" />
+            <img src="{{ profile.foto.url|cut:'/' }}" alt="{{ profile.nama_lengkap }}" class="profile-photo" />
           {% else %}
             <div class="profile-photo-placeholder">
               <i class="bi bi-person-fill"></i>
