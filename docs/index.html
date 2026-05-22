@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahra Nailah Rianto · Portofolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-200: #bfdbfe;
+      --blue-300: #93c5fd;
+      --blue-400: #60a5fa;
+      --blue-500: #3b82f6;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --navy: #1e3a5f;
+      --white: #ffffff;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
+      --font-display: 'Segoe UI', sans-serif;
+      --shadow: 0 4px 16px rgba(0,0,0,.1);
+    }
+    body { font-family: var(--font-display); }
+    .fw-500 { font-weight: 500; }
+    .fw-600 { font-weight: 600; }
+    .btn-primary-zahra {
+      background: var(--blue-600);
+      color: white;
+      padding: .6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background .2s;
+    }
+    .btn-primary-zahra:hover { background: var(--blue-700); color: white; }
+    .btn-outline-zahra {
+      border: 2px solid var(--blue-600);
+      color: var(--blue-600);
+      padding: .6rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all .2s;
+    }
+    .btn-outline-zahra:hover { background: var(--blue-600); color: white; }
+    .sosmed-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--blue-100);
+      color: var(--blue-600);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .sosmed-btn:hover { background: var(--blue-600); color: white; }
+  </style>
+
+  
+<style>
+  /* ─── Hero Section ─── */
+  .hero-section {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(145deg, var(--blue-50) 0%, var(--white) 60%, var(--blue-100) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Dekorasi lingkaran */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-200) 0%, transparent 70%);
+    top: -150px;
+    right: -100px;
+    opacity: .45;
+    pointer-events: none;
+  }
+
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-300) 0%, transparent 70%);
+    bottom: -80px;
+    left: -60px;
+    opacity: .25;
+    pointer-events: none;
+  }
+
+  /* Foto profil */
+  .profile-photo-wrap {
+    position: relative;
+    display: inline-block;
+  }
+
+  .profile-photo {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 32px rgba(37, 99, 235, .22);
+  }
+
+  /* Placeholder jika belum ada foto */
+  .profile-photo-placeholder {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-400), var(--blue-600));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    color: var(--white);
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 32px rgba(37, 99, 235, .22);
+  }
+
+  /* Dot dekoratif di foto */
+  .profile-photo-wrap .badge-status {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #22c55e;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+  }
+
+  /* Nama & tagline */
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: .4rem;
+  }
+
+  .hero-tagline {
+    color: var(--blue-600);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .hero-location {
+    color: var(--gray-500);
+    font-size: .95rem;
+  }
+
+  /* Nav card (halaman lain) */
+  .nav-card {
+    background: var(--white);
+    border: 2px solid var(--blue-100);
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    color: var(--gray-700);
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    transition: all .25s;
+    font-weight: 500;
+  }
+
+  .nav-card:hover {
+    border-color: var(--blue-500);
+    color: var(--blue-700);
+    background: var(--blue-50);
+    transform: translateX(6px);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-card .nav-icon {
+    font-size: 1.4rem;
+    color: var(--blue-500);
+    min-width: 28px;
+  }
+
+  /* Sosmed strip */
+  .sosmed-strip {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+  }
+
+  /* Animasi masuk */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim-1 { animation: fadeUp .6s ease both; }
+  .anim-2 { animation: fadeUp .6s .15s ease both; }
+  .anim-3 { animation: fadeUp .6s .3s ease both; }
+</style>
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background: white; box-shadow: var(--shadow); position: sticky; top:0; z-index:999;">
+    <div class="container">
+      <a class="navbar-brand fw-600" style="color:var(--navy);" href="/">Portofolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/skills/">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Flash messages -->
+  
+
+  <!-- Konten utama -->
+  
+<section class="hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+
+      <!-- ── Foto ── -->
+      <div class="col-lg-4 text-center anim-1">
+        <div class="profile-photo-wrap d-inline-block">
+          
+            <img src="/profile/IMG_2386.jpeg" alt="Zahra Nailah Rianto" class="profile-photo" />
+          
+          <span class="badge-status"></span>
+        </div>
+      </div>
+
+      <!-- ── Data Profile ── -->
+      <div class="col-lg-5 anim-2">
+        <p class="text-uppercase fw-600 mb-1" style="color:var(--blue-400); font-size:.85rem; letter-spacing:.1em">
+          Halo, saya
+        </p>
+        <h1 class="hero-name">Zahra Nailah Rianto</h1>
+        <p class="hero-tagline">
+          <i class="bi bi-stars me-1"></i>Telekomunikasi Engineering
+        </p>
+        <p class="hero-location">
+          <i class="bi bi-geo-alt me-1"></i>Bandung Barat, Indonesia
+        </p>
+
+        <!-- Sosial media -->
+        <div class="sosmed-strip">
+          
+            
+              <a href="https://www.instagram.com/zahraanr29?igsh=MTVlanB6Ympuc3kxdg==" target="_blank" class="sosmed-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+            
+          
+            
+              <a href="mailto:zahranailahrianto29@gmail.com" class="sosmed-btn" title="Email"><i class="bi bi-envelope-fill"></i></a>
+            
+          
+            
+              <a href="https://www.linkedin.com/in/zahranailahrianto" target="_blank" class="sosmed-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            
+          
+        </div>
+
+        <div class="mt-4">
+          <a href="/contact/" class="btn-primary-zahra me-2 d-inline-block text-decoration-none">
+            <i class="bi bi-chat-dots me-1"></i>Hubungi Saya
+          </a>
+          <a href="/projects/" class="btn-outline-zahra d-inline-block text-decoration-none">
+            <i class="bi bi-folder2-open me-1"></i>Lihat Projek
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Nav ke halaman lain ── -->
+      <div class="col-lg-3 anim-3">
+        <p class="fw-500 mb-2" style="color:var(--gray-500); font-size:.88rem; text-transform:uppercase; letter-spacing:.08em">
+          Jelajahi
+        </p>
+        <div class="d-flex flex-column gap-2">
+          <a href="/about/" class="nav-card">
+            <i class="bi bi-person-lines-fill nav-icon"></i>
+            <span>About Me</span>
+            <i class="bi bi-chevron-right ms-auto text-muted"></i>
+          </a>
+          <a href="/skills/" class="nav-card">
+            <i class="bi bi-lightning-fill nav-icon"></i>
+            <span>Skills</span>
+            <i class="bi bi-chevron-right ms-auto text-muted"></i>
+          </a>
+          <a href="/projects/" class="nav-card">
+            <i class="bi bi-folder-fill nav-icon"></i>
+            <span>Projects</span>
+            <i class="bi bi-chevron-right ms-auto text-muted"></i>
+          </a>
+          <a href="/contact/" class="nav-card">
+            <i class="bi bi-envelope-fill nav-icon"></i>
+            <span>Contact</span>
+            <i class="bi bi-chevron-right ms-auto text-muted"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
